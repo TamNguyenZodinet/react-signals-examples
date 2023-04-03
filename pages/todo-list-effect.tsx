@@ -18,7 +18,7 @@ const todos = signal<Todo[]>([
 // Log to console when `totos` changes
 effect(() => {
   console.log("Todos was changed!");
-  console.log(todos.value);
+  console.log(todos.peek());
 });
 
 // We'll use this for our input

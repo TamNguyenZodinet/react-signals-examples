@@ -3,15 +3,22 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 export default function CounterLocalState() {
-  const [count, setCount] = useState(0);
-  const [double, setDouble] = useState(0);
+  // const [count, setCount] = useState(0);
+  // const [double, setDouble] = useState(0);
 
-  useEffect(() => {
-    setDouble(count * 2);
-  }, [count]);
+  // useEffect(() => {
+  //   setDouble(count * 2);
+  // }, [count]);
+
+  // const onClick = () => {
+  //   setCount(count + 1);
+  // };
+
+  const count = useSignal(0);
+  const double = useComputed(() => count.value * 2);
 
   const onClick = () => {
-    setCount(count + 1);
+    count.value++;
   };
 
   console.log("render Counter Local State");

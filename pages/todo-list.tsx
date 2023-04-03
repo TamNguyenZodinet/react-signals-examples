@@ -23,6 +23,7 @@ function removeTodo(todo: Todo) {
 
 export default function TodoList() {
   const onInput = (event: any) => (text.value = event.target.value);
+  console.log("REnder Todo list");
 
   return (
     <>
